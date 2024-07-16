@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.font.im/css?family=Black+Ops+One");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap'); /* English Font */
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap'); /* Chinese Font */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap'); /* Japanese Font */
+
+
+
+:root {
+    --card-bg: rgba(252, 244, 225, 0.537);
+    --card-ft:  rgb(255, 248, 237);
+}
+
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* 添加到 portv0.2.css 文件 */
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.card-link .about-front, .card-link .work-front, .card-link .contact-front, .card-link .qa-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-link .about-back, .card-link .work-back, .card-link .contact-back, .card-link .qa-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-link img {
+    width: 100%;
+    height: auto;
+}
+
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(to top, #434343 0%, black 100%); */
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.background-overlay .particle {
+    position: absolute;
+    background-color: rgba(52, 152, 219, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.background-bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 5s infinite;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -50px) scale(1.2);
+    }
+    50% {
+        transform: translate(-50px, 50px) scale(1.1);
+    }
+    75% {
+        transform: translate(50px, 50px) scale(1.3);
+    }
+    100% {
+        transform: translate(-50px, -50px) scale(1);
+    }
+}
+
+.menu {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px) saturate(150%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(50, 50, 50, 0.37);
+    padding: 35px;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 2.5rem;
+    grid-template-areas:
+        "header header header header header header header"
+        "about-me about-me work work work work work"
+        "about-me about-me work work work work work"
+        "about-me about-me work work work work work"
+        "about-me about-me work work work work work"
+        "about-me about-me contact contact contact qa qa"
+        "about-me about-me contact contact contact qa qa"
+        "about-me about-me contact contact contact qa qa"
+        "about-me about-me contact contact contact qa qa"
+        "about-me about-me contact contact contact qa qa";
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+    background-color: rgba(189, 189, 189, 0.6);
+    border-radius: 30px;
+}
+
+header > div {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.header__logo {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    font-weight: 900; 
+    font-size: 3rem;
+    color: #000;
+    margin: 0;
+    opacity: 0.8;
+    position: relative;
+    transition: opacity 5s ease-in-out, transform 5s ease-in-out;
+}
+
+.marquee span.zh {
+    font-family: 'ZCOOL KuaiLe', sans-serif; /* 使用ZCOOL KuaiLe字体 */
+    font-weight: 700; 
+}
+
+.marquee span.en {
+    font-family: 'Orbitron', sans-serif; /* 使用Orbitron字体 */
+    font-weight: 900; 
+}
+
+.marquee span.jp {
+    font-family: 'DotGothic16', sans-serif; /* 使用DotGothic16字体 */
+    font-weight: 700; 
+}
+
+.marquee span:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+.marquee span::before,
+.marquee span::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.marquee span::before {
+    left: 2px;
+    text-shadow: -2px 0 magenta;
+    animation: glitch-anim 10s infinite linear alternate-reverse;
+}
+
+.marquee span::after {
+    left: -2px;
+    text-shadow: -2px 0 lime;
+    animation: glitch-anim2 12s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0%, 95%, 100% {
+        opacity: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    10%, 20%, 30% {
+        opacity: 1;
+        clip-path: polygon(10% 20%, 90% 20%, 90% 80%, 10% 80%);
+    }
+    40%, 50%, 60% {
+        opacity: 0.5;
+        clip-path: polygon(20% 30%, 80% 30%, 80% 70%, 20% 70%);
+    }
+    70% {
+        opacity: 0.3;
+        clip-path: polygon(0% 50%, 100% 50%, 100% 60%, 0% 60%);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0%, 90%, 100% {
+        opacity: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    15%, 25%, 35% {
+        opacity: 1;
+        clip-path: polygon(5% 15%, 95% 15%, 95% 85%, 5% 85%);
+    }
+    45%, 55%, 65% {
+        opacity: 0.5;
+        clip-path: polygon(25% 35%, 75% 35%, 75% 65%, 25% 65%);
+    }
+    75% {
+        opacity: 0.3;
+        clip-path: polygon(0% 55%, 100% 55%, 100% 65%, 0% 65%);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+.header__logo::before,
+.header__logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 1;
+}
+
+/* .header__logo::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.header__logo::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+} */
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+
+
+.about_me,
+.work,
+.contact,
+.qa {
+    margin: 10px 0;
+}
+
+
+
+.about_me {
+    grid-area: about-me;
+    background-color: rgba(26, 22, 22, 0.01);
+    height: 100%;
+    position: relative;
+}
+
+.about_me .particle {
+    position: absolute;
+    background-color: rgba(52, 152, 219, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 1s ease, box-shadow 1s ease;
+    z-index: 1;
+}
+
+.about-front,
+.about-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.about-front {
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--card-ft);
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.about-front img {
+    padding: 0.5rem;
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+.about-front h2 {
+    color: rgb(60,60,70);
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px) saturate(100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(50, 50, 50, 0.37);
+    padding: 0.5rem 1.5rem;
+    font-size: 3rem;
+}
+.about-back {
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem; /* 增大文字大小 */
+    background: rgba(255, 255, 255, 0.7); /* 背景色 */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-back ul {
+    list-style: none;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* 背景色 */
+    border-radius: 10px; /* 圓角 */
+    position: relative;
+    z-index: 2; /* 確保文字在最上層 */
+
+}
+
+.about-back li {
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
+    color: #2c3e50;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-back li:hover {
+    transform: scale(1.05);
+}
+
+.about-back li:active {
+    transform: scale(0.95);
+}
+
+.about-card:hover .about-back {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.05);;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(52, 152, 219);
+    opacity: 0.2;
+    bottom: 0; /* 設置氣泡從最下方開始 */
+    animation: bubble 10s linear forwards;
+    z-index: 1; /* 確保圓形在文字下面 */
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateY(-80vh) scale(1.2); /* 将 translateY 设置为 -100vh 确保气泡上升到容器顶部 */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.2); /* 将 translateY 设置为 -100vh 确保气泡上升到容器顶部 */
+        opacity: 0;
+    }
+}
+
+
+.about-card:hover .about-front {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.about-card:hover .about-back {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+}
+
+.work {
+    grid-area: work;
+    background-color: rgba(255, 255, 255, 0.01);
+    height: 100%;
+    position: relative;
+}
+
+.work .particle {
+    position: absolute;
+    background-color: rgba(52, 152, 219, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.work-card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.work-front,
+.work-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, opacity 1s ease;
+    border-radius: 25px;
+}
+
+.work-front {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    background-color: var(--card-ft);
+    background-image: url(./pic/workbg.png);
+    backdrop-filter: brightness(90%) contrast(90%) saturate(80%) blur(0.25px) hue-rotate(10deg);;
+    background-position: center;
+    background-size: cover;
+}
+
+.work-front img {
+    padding: 5px;
+    width:  100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.work-front h2 {
+
+    font-size: 3rem;
+
+}
+
+.work-back {
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    padding: 20px;
+    font-size: 1.25rem;
+}
+.work-back p {
+    background: rgba(255, 255, 255, 0.8); /* 背景色 */
+    border-radius: 10px; /* 圓角 */
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1em;
+    color: #2c3e50;
+    z-index: 2;
+}
+.work-card:hover .work-front {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.work-card:hover .work-back {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+}
+
+.contact {
+    grid-area: contact;
+    background-color: rgba(255, 255, 255, 0.01);
+    height: 100%;
+    position: relative;
+}
+
+.contact-card {
+    width: 100%;
+    height: 100%;
+    background-color:var(--card-bg);
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 1s ease, box-shadow 1s ease;
+    z-index: 1;
+}
+
+.contact-front,
+.contact-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.contact-front {
+    background-image: url(./pic/portfolio-main-view.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--card-ft);
+    border-radius: 30px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.contact-front h2 {
+    -webkit-text-stroke: 1px whitesmoke;
+    font: 900 5rem '';
+    letter-spacing: 10px;
+    padding: 0.2rem 2rem;
+}
+
+.contact-back {
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-back p {
+    background: rgba(255, 255, 255, 0.8); /* 背景色 */
+    border-radius: 10px; /* 圓角 */
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #2c3e50;
+    z-index: 2;
+    animation: floating 2.5s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+.contact-card:hover .contact-front {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.contact-card:hover .contact-back {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.qa {
+    grid-area: qa;
+    background-color: rgba(255, 255, 255, 0.01);
+    height: 100%;
+    position: relative;
+}
+
+
+
+.qa-card {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 2.5s ease, box-shadow 1s ease;
+}
+
+.qa-card img {
+    width: 100%;
+    height: 100%;
+    /* 设置过渡 */
+    transition: 0.5s;
+}
+
+.qa-card .qa-text {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    bottom: 30px;
+    right: 30px;
+    padding: 0 18px;
+}
+
+.qa-card .qa-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    border-left: 4px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    /* 过渡 */
+    transition: 0.5s;
+    /* 过渡延迟时间 */
+    transition-delay: 0s;
+}
+
+.qa-card .tqa-ext h2,
+.qa-card .qa-text p {
+    opacity: 0;
+    transition: 0.35s;
+}
+
+.qa-card .qa-text h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    transform: translate(30%, 0%);
+    transition-delay: 0.5s;
+}
+
+.qa-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.qa-card .qa-text h2 {
+    font-weight: 800;
+}
+
+.qa-card .qa-text p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    transform: translate(0%, 30%);
+}
+
+/* 悬停样式开始 */
+
+.qa-card:hover {
+
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.4);
+}
+
+.qa-card:hover img {
+    opacity: 0.45;
+
+}
+
+.qa-card:hover .qa-text h2 {
+    opacity: 1;
+    transform: translate(0%, 0%);
+    transition-delay: 0.4s;
+}
+
+.qa-card:hover .qa-text p {
+    opacity: 1;
+    transform: translate(0%, 0%);
+    transition-delay: 0.2s;
+}
+
+.qa-card:hover .qa-text::before {
+    background-color: rgba(255, 255, 255, 0.1);
+    left: 0;
+    opacity: 1;
+    transition-delay: 0s;
+}

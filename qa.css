@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    animation: move 15s infinite alternate;
+}
+
+.circle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    left: -150px;
+    top: -150px;
+}
+
+.circle:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    right: -100px;
+    bottom: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+.qa-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.qa-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.qa-item {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.qa-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qa-title {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.qa-title h2 {
+    font-size: 1.2em;
+    color: #34495e;
+    transition: color 0.3s ease;
+}
+
+.qa-item:hover .qa-title h2 {
+    color: #3498db;
+}
+
+.icon {
+    font-size: 1.5em;
+    color: #3498db;
+    transition: transform 0.3s ease;
+}
+
+.qa-item.active .icon {
+    transform: rotate(45deg);
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.qa-item.active .answer {
+    max-height: 1000px;
+    padding: 20px;
+}
+
+.answer p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .qa-container {
+        padding: 20px;
+    }
+
+    .qa-title h2 {
+        font-size: 1em;
+    }
+}

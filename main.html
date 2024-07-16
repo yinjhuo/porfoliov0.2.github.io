@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="port-link.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet"> <!-- English Font -->
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"> <!-- Chinese Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet"> <!-- Japanese Font -->
+</head>
+<body>
+    <main class="background-container">
+        <div class="background-overlay"></div>
+        <div class="menu">
+            <header>
+                <div class="up">
+                    <div class="header__logo">
+                        <div class="marquee-container">
+                            <div class="marquee">
+                                <!-- English -->
+                                <span class="en" data-text="Welcome to my personal website! Explore my world and discover my story.">Welcome to my personal website! Explore my world and discover my story.</span>
+                                <span class="en" data-text="Click into each section to learn about my interests, skills, and works.">Click into each section to learn about my interests, skills, and works.</span>
+                                <span class="en" data-text="Stay in touch! Find my contact information here and feel free to reach out anytime.">Stay in touch! Find my contact information here and feel free to reach out anytime.</span>
+                                <!-- Chinese -->
+                                <span class="zh" data-text="歡迎來到我的個人網站！探索我的世界，發現我的故事。">歡迎來到我的個人網站！探索我的世界，發現我的故事。</span>
+                                <span class="zh" data-text="點擊進入各個板塊，了解我的興趣、技能和作品。">點擊進入各個板塊，了解我的興趣、技能和作品。</span>
+                                <span class="zh" data-text="保持聯絡！在這裡找到我的聯絡資訊，隨時聯繫我。">保持聯絡！在這裡找到我的聯絡資訊，隨時聯繫我。</span>
+                                <!-- Japanese -->
+                                <span class="jp" data-text="私の個人サイトへようこそ！私の世界を探索し、私の物語を見つけてください。">私の個人サイトへようこそ！私の世界を探索し、私の物語を見つけてください。</span>
+                                <span class="jp" data-text="各セクションをクリックして、私の興味、スキル、作品について知ってください。">各セクションをクリックして、私の興味、スキル、作品について知ってください。</span>
+                                <span class="jp" data-text="連絡を取りましょう！ここで私の連絡先情報を見つけて、いつでもご連絡ください。">連絡を取りましょう！ここで私の連絡先情報を見つけて、いつでもご連絡ください。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="about_me">
+                <div class="about-card">
+                    <div class="about-front">
+                        <img src="./pic/about me v0.1.png" alt="About Me Image" class="about-image">
+                        <h2>ABOUT ME</h2>
+                    </div>
+                    <div class="about-back">
+                        <ul>
+                            <li>個人資料</li>
+                            <li>興趣</li>
+                            <li>技能</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-card">
+                    <div class="work-front">
+                        <!-- <img src="./pic/workbg.png" alt="Work Image" class="work-image"> -->
+                        <!-- <h2>作品展示</h2> -->
+                    </div>
+                    <div class="work-back">
+                        <p>このページは私の作品を展示しています。クリックして作品をご覧ください。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact-card">
+                    <div class="contact-front">
+                        <h2>CONTACT</h2>
+                    </div>
+                    <div class="contact-back">
+                        <p>こちらに連絡先情報を記載しております。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="qa">
+                <div class="qa-card">
+                    <img src="./pic/qa1.webp" alt="Q&A Image">
+                    <h2>常見問答</h2>
+                    <div class="qa-text">
+                        <p>問題 1：なぜ日本に..？</p>
+                        <p>問題 2：将来の展望..？</p>
+                        <p>問題 3：普段の趣味..？</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="bg.js"></script>
+    <script src="bg effect.js"></script>
+    <script>
+ document.addEventListener("DOMContentLoaded", function () {
+            const marquee = document.querySelector('.marquee');
+            const content = marquee.innerHTML;
+            marquee.innerHTML = content + content;
+
+            const spans = document.querySelectorAll('.marquee span');
+            spans.forEach(span => {
+                span.style.animationDelay = `${Array.from(spans).indexOf(span) * 10}s`;
+            });
+
+            // 计算整个内容的总宽度并设置动画持续时间
+            const spanWidth = marquee.querySelector('span').offsetWidth;
+            const totalWidth = spanWidth * marquee.querySelectorAll('span').length;
+            const duration = totalWidth / 100; // 你可以根据需要调整这个值
+            marquee.style.animationDuration = `${duration}s`;
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function createBubble(container) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+
+                const size = Math.random() * 60 + 20;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // 持續5到10秒
+
+                container.appendChild(bubble);
+
+                setTimeout(() => {
+                    bubble.remove();
+                }, 10000); // 持續10秒
+            }
+
+            function startBubbles(selector) {
+                const container = document.querySelector(selector);
+                setInterval(() => createBubble(container), 500);
+            }
+
+            // 為每個需要泡泡效果的板塊啟動泡泡
+            startBubbles('.about-back');
+            startBubbles('.work-back');
+            startBubbles('.contact-back');
+        });
+
+    </script>
+</body>
+
+</html>

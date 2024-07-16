@@ -1,0 +1,493 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: relative;
+    background: url("background-image.jpg") no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10rem 0;
+    
+}
+
+
+.card1 {
+    height: 80vh;
+}
+
+.card1 .a, .card2 .a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10rem 0;
+}
+
+.card1 .a {
+    width: 1000px;
+    height: 600px;
+    background-image: url("./pic/workbg.png");
+    background-size: cover;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.15);
+    /* 調整透明度 */
+    backdrop-filter: blur(10px) saturate(150%);
+    /* 增加模糊和飽和度 */
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.37);
+    /* 調整陰影顏色 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    filter: brightness(90%) contrast(90%) saturate(80%) blur(1px) hue-rotate(10deg);
+}
+
+
+.card1 .a:hover {
+    filter: brightness(100%) contrast(90%) saturate(80%) blur(0.25px) hue-rotate(15deg);;
+}
+
+
+.card1 .b,
+.card1 .c,
+.card1 .d,
+.card1 .e {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    filter: drop-shadow(4px 4px 12px rgba(0,0,0,.5));
+    background-size: cover;
+    opacity: .7;
+    transition: .5s;
+}
+
+.card1 .b::after,
+.card1 .c::after,
+.card1 .d::after,
+.card1 .e::after {
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    background-image: url("./pic/workbg.png");
+    background-size: cover;
+    overflow: hidden;
+    filter: brightness(0.5) blur(2px); 
+}
+
+.card1 .b {
+    left: -350px;
+    transform: rotateZ(100deg);
+    overflow: hidden;
+}
+
+.card1 .b::after {
+    transform: rotateZ(-100deg);
+}
+
+.card1 .c {
+    left: -350px;
+    transform: rotateZ(-100deg);
+    overflow: hidden;
+}
+
+.card1 .c::after {
+    transform: rotateZ(100deg);
+}
+
+.card1 .d {
+    right: -350px;
+    transform: rotateZ(105deg);
+    overflow: hidden;
+}
+
+.card1 .d::after {
+    transform: rotateZ(-105deg);
+}
+
+.card1 .e {
+    right: -350px;
+    transform: rotateZ(-100deg);
+    overflow: hidden;
+}
+
+.card1 .e::after {
+    transform: rotateZ(100deg);
+}
+
+.card1 .f {
+    opacity: 0;
+    font: 900 5rem '';
+    letter-spacing: 10px;
+    color: rgb(60,60,70);
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px) saturate(100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(50, 50, 50, 0.37);
+    padding: 0.2rem 2rem;
+    transition: 0.6s;
+}
+
+.card1 .a:hover .b {
+    left: -550px;
+}
+
+.card1 .a:hover .c {
+    left: -600px;
+}
+
+.card1 .a:hover .d {
+    right: -550px;
+}
+
+.card1 .a:hover .e {
+    right: -610px;
+}
+
+.card1 .a:hover .f {
+    opacity: 1;
+}
+
+
+
+.card2 .a {
+    width: 800px;
+    height: 500px;
+    border: #fff 10px solid;
+    background-color: rgb(120,140,200);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card2 .b {
+    width: 350px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: 1s;
+    position: relative;
+    z-index: 2;
+}
+
+.card2 .b a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card2 .b h2 {
+    transition: opacity 0.5s 1s;
+    opacity: 0;
+    color: rgb(30,210,200);
+    margin-bottom: 1rem;
+}
+
+.card2 .b span {
+    transition: top 0.5s 1s, opacity 0.5s 1s;
+    color: #fff;
+    font: 500 1rem Arial, sans-serif;
+    position: relative;
+    top: 0;
+    display: block;
+    opacity: 0;
+}
+
+.card2 .c {
+    width: 350px;
+    height: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: -400px;
+    top: 20px;
+    transition: transform 1s;
+    z-index: 1;
+}
+
+.card2 .a:hover .c {
+    transform: translateX(-400px);
+}
+
+.card2 .a:hover .b h2,
+.card2 .a:hover .b span {
+    opacity: 1;
+}
+
+.card2 .a:hover .b span {
+    top: 20px;
+}
+
+
+.card2 .c {
+    position: absolute;
+    top: -130px;
+    right: -240px;
+}
+
+.card2 .d,
+.card2 .e {
+    position: absolute;
+    right: calc(var(--i) * 100px);
+    width: calc(var(--w) * 40px);
+    height: 500px;
+    overflow: hidden;
+    border-radius: 100px;
+    transform: rotateZ(220deg) translate(0, 0);
+    background: rgb(240, 220, 150);
+    transition: 0.5s 0.5s;
+}
+
+.card2 .d:nth-child(2) {
+    background: rgb(240, 190, 230);
+}
+
+.card2 .e {
+    left: -400px;
+    top: -140px;
+    width: 70px;
+    background-color: rgb(90, 220, 150);
+}
+
+.card2 .a:hover .c div {
+    transition: 0.5s calc(var(--i) * 0.1s);
+    transform: rotateZ(220deg) translate(-200px, 400px);
+}
+
+.card2 .a:hover .b {
+    left: 40%;
+    transform: translateX(50px);
+}
+
+.card2 .f {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    background-image: url("goat.png");
+    background-size: cover;
+    margin: 70px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card2 .a:hover .f {
+    transition: 1s 1.3s;
+    opacity: 1;
+}
+
+/* 雲的動畫背景 */
+.square {
+    position: absolute;
+    background: rgb(233, 178, 178);
+    animation: float 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(-2000px) rotate(720deg);
+    }
+}
+
+
+/* 现有样式保持不变 */
+
+/* 占位符增加距離 */
+.spacer {
+    height: 300px; /* 根据需要调整占位符的高度 */
+}
+/* 
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.indicator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.shape {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    animation: moveDown 4s infinite ease-in-out;
+    opacity: 0;
+}
+
+.shape:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.shape:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.shape:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.shape:nth-child(5) {
+    animation-delay: 2s;
+}
+
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+}
+
+.scroll-hint {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    animation: fadeInOut 4s infinite ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+} */
+
+
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: -2;
+}
+
+.indicator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.shape {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    animation: moveDown 4s infinite ease-in-out;
+    opacity: 0;
+}
+
+.shape:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.shape:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.shape:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.shape:nth-child(5) {
+    animation-delay: 2s;
+}
+
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+}
+
+.scroll-hint {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    animation: fadeInOut 4s infinite ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio-work</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+
+<body>
+    <div class="language-switcher">
+        <button id="lang-toggle" class="lang-button toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L20 8L12 14L4 8L12 2Z"></path>
+                <path d="M4 8L12 14L20 8M4 16L12 22L20 16"></path>
+            </svg>
+        </button>
+        <div id="lang-options" class="lang-options">
+            <button id="en-button" class="lang-button">English</button>
+            <button id="zh-button" class="lang-button">中文</button>
+            <button id="jp-button" class="lang-button">日本語</button>
+        </div>
+    </div>
+    
+    
+    <main class="background">
+        <section class="categories-bg">
+            <h1 data-key="portfolio">PORTFOLIO</h1>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    <span data-key="all">所有作品</span>
+                </button>
+                <button class="category-btn" data-category="web">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+                    </svg>
+                    <span data-key="web">網頁設計</span>
+                </button>
+                <button class="category-btn" data-category="drawing">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                    </svg>
+                    <span data-key="drawing">繪畫</span>
+                </button>
+                <button class="category-btn" data-category="graphic">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                    <span data-key="graphic">平面設計</span>
+                </button>
+            </div>
+            <div class="portfolio-grid" id="portfolio-grid">
+                <div class="portfolio-item" data-category="web" data-target="modal1">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-web1.png" alt="響應式網站設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="webDesign1">SWIFT-xi 網頁設計作業</h3>
+                            <p data-key="webDesignDesc1">REBUILD in MY VIEW</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal2">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/contact1.png" alt="數位插畫創作">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign1">作品集展示頁面-主視覺圖片</h3>
+                            <p data-key="graphicDesignDesc1">REMIX MIX MIXED</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="drawing" data-target="modal3">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/paint-inner.png" alt="數位插畫創作">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="drawing1">系列畫作</h3>
+                            <p data-key="drawingDesc1">笑容</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal12">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/flat1.jpg" alt="數位插畫創作">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign2">人物介紹海報</h3>
+                            <p data-key="graphicDesignDesc2">灰階 X 排版</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal5">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-flat3.jpg" alt="數位插畫創作">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign3">名片設計</h3>
+                            <p data-key="graphicDesignDesc3">你好，初次見面</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal6">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-flat4.png" alt="響應式網站設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign4">SWIFT-xi 海報設計</h3>
+                            <p data-key="graphicDesignDesc4">科技感120%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web" data-target="modal7">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-web4.png" alt="響應式網站設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="webDesign2">角色網頁</h3>
+                            <p data-key="webDesignDesc2">Joker</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal8">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-flat2.png" alt="響應式網站設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign5">傳單設計</h3>
+                            <p data-key="graphicDesignDesc5">五月祭典</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="drawing" data-target="modal9">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/portfolio-main-view1.png" alt="品牌識別設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="drawing2">個人意象圖</h3>
+                            <p data-key="drawingDesc2">Cyberpunk X ME</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal10">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/skill-4.png" alt="品牌識別設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign6">星座設計</h3>
+                            <p data-key="graphicDesignDesc6">主軸：微笑</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic" data-target="modal11">
+                    <div class="portfolio-item-container">
+                        <img src="./pic/work-flat6.png" alt="品牌識別設計">
+                        <div class="portfolio-item-content">
+                            <h3 data-key="graphicDesign7">SWIFT-xi 折疊導覽</h3>
+                            <p data-key="graphicDesignDesc7">三折導覽單</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="close-btn">
+                <div class="close-icon"></div>
+            </div>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-web5.png" alt="響應式網站設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle1">翻新網頁</h3>
+                <p data-key="modalDesc1">根據主流科技網站作為範本，盡可能設計出符合現代審美的網站。</p>
+                <a>link</a>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-flat1.png" alt="數位插畫創作" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle2">主視覺圖片</h3>
+                <p data-key="modalDesc2">個人作品混合，嵌入個人設計字體，想創造出有層次的視覺效果。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="close-btn">
+                <div class="close-icon"></div>
+            </div>
+            <div class="modal-img-wrapper">
+                <img src="./pic/paint-inner.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle3">原創畫作</h3>
+                <p data-key="modalDesc3">帶著面具的每一天。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal12" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/flat1.jpg" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle4">人物介紹海報</h3>
+                <p data-key="modalDesc4">用灰階跟簡單的排版，讓海報版面資訊清楚可見。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-flat3.jpg" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle5">名片設計</h3>
+                <p data-key="modalDesc5">想在平面上創建出立體的空間感。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-flat4.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle6">SWIFT-xi 海報設計</h3>
+                <p data-key="modalDesc6">用一張海報介紹我的翻新網站的特點，呼應網站風格，設計語言也是以科技風為主。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-web4.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle7">角色網頁</h3>
+                <p data-key="modalDesc7">角色簡介網站，運用Joker的代表顏色。營造出網站陰暗的氛圍。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-flat2.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle8">傳單設計</h3>
+                <p data-key="modalDesc8">用飽和度高的暖色，讓畫面有祭典的氣氛。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/portfolio-main-view.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle9">個人意象圖</h3>
+                <p data-key="modalDesc9">Cyberpunk X ME。</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/skill-4.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle10">星座設計</h3>
+                <p data-key="modalDesc10">主軸：微笑</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal11" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img src="./pic/work-flat6.png" alt="品牌識別設計" class="modal-img">
+            </div>
+            <div class="modal-text">
+                <h3 data-key="modalTitle11">SWIFT-xi 折疊導覽</h3>
+                <p data-key="modalDesc11">呼應了翻新網站的風格，導覽封面運用了該公司的商標顏色。</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="work.js"></script>
+<script src="work-bg.js"></script>
+<script src="work-item.js"></script>
+
+</html>
