@@ -3,67 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡頁面</title>
-    <link rel="stylesheet" href="contact.css">
+    <title>我的分層聯絡資訊</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f0f4f8;
+            --text-color: #2c3e50;
+            --card-background: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            background-color: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px var(--shadow-color);
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--card-background);
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .info-item:hover .icon {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+        .info-text {
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 30px;
+        }
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+        .dark-theme {
+            --background-color: #2c3e50;
+            --text-color: #ecf0f1;
+            --card-background: #34495e;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+        .particle {
+            position: absolute;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+        .home-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px var(--shadow-color);
+        }
+        .home-button:active {
+            transform: scale(0.9);
+        }
+    </style>
 </head>
 <body>
-    <div class="background">
-        <div class="container">
-            <section class="card-section card1">
-                <div class="a">
-                    <div class="b"></div>
-                    <div class="c"></div>
-                    <div class="d"></div>
-                    <div class="e"></div>
-                    <p class="f">KUO HSIAO TSE</p>
-                </div>
-            </section>
-
-            <div class="scroll-indicator" id="scrollIndicator">
-                <div class="indicator-container">
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                    <div class="shape"></div>
-                </div>
-            </div>
-            
-
-            <section class="card-section card2">
-                <div class="a">
-                    <div class="b">
-                        <a href="#">CONTACT</a>
-                        <h2>Welcome to my page</h2>
-                        <span>E-mail : kakukoutetsu@gmial.com<br>I'm learning new knowledge every day to share with you,<br>I hope in the days to come<br>Keep going!!</span>
-                    </div>
-                    <div class="c">
-                        <div class="d" style="--i:1;--w:1.5"></div>
-                        <div class="d" style="--i:2;--w:1.6"></div>
-                        <div class="d" style="--i:3;--w:1.4"></div>
-                        <div class="d" style="--i:4;--w:1.7"></div>
-                        <div class="e" style="--i:1"></div>
-                    </div>
-                    <div class="f"></div>
-                </div>
-            </section>
-        </div>
+    <div class="container">
+        <h1>我的聯絡資訊</h1>
+        <div id="info-container"></div>
+        <label class="theme-toggle">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
     </div>
-    <script src="contact.js"></script>
+    <a href="main.html" class="home-button" title="回到主目錄">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script>
-        document.addEventListener('scroll', function() {
-    const scrollIndicator = document.getElementById('scrollIndicator');
-    const card2 = document.querySelector('.card2');
-    const card2Position = card2.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+        const contactInfo = [
+            { icon: 'fas fa-envelope', text: 'kakukoutetsu@gmail.com' },
+            { icon: 'fas fa-phone', text: '080-7219-8073' },
+            { icon: 'fab fa-github', text: 'https://github.com/yinjhuo' }
+        ];
 
-    if (card2Position <= windowHeight * 0.9) {
-        scrollIndicator.style.opacity = '0';
-    } else {
-        scrollIndicator.style.opacity = '1';
-    }
-});
+        const infoContainer = document.getElementById('info-container');
 
+        contactInfo.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'info-item';
+            div.innerHTML = `
+                <i class="${item.icon} icon"></i>
+                <span class="info-text">${item.text}</span>
+            `;
+            div.style.opacity = '0';
+            div.style.transform = 'translateY(20px)';
+            infoContainer.appendChild(div);
+
+            setTimeout(() => {
+                div.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                div.style.opacity = '1';
+                div.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+
+        infoContainer.addEventListener('click', (e) => {
+            const item = e.target.closest('.info-item');
+            if (item) {
+                const text = item.querySelector('.info-text').textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    createParticles(item);
+                    alert('已複製到剪貼簿：' + text);
+                });
+            }
+        });
+
+        function createParticles(element) {
+            const rect = element.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                document.body.appendChild(particle);
+
+                const size = Math.random() * 5 + 2;
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 50 + 50;
+                const lifetime = Math.random() * 1000 + 1000;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${centerX}px`;
+                particle.style.top = `${centerY}px`;
+
+                setTimeout(() => {
+                    particle.style.transition = `all ${lifetime}ms ease-out`;
+                    particle.style.transform = `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity}px)`;
+                    particle.style.opacity = '1';
+
+                    setTimeout(() => {
+                        particle.style.opacity = '0';
+                        setTimeout(() => particle.remove(), 1000);
+                    }, lifetime - 1000);
+                }, 0);
+            }
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+        });
     </script>
 </body>
 </html>
